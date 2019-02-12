@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 app.use(express.static('./public'));
 var result = [];
 app.get("/", function (req, res) {
-  res.sendFile(path.resolve('./public/views/index.html'));
+  res.sendFile(path.resolve('./public/index.html'));
 });
 
 app.get("/getData", function (req, res) {
