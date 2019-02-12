@@ -1,7 +1,12 @@
 const bodyParser = require('body-parser');
 const express = require ('express');
 const app = express();
+
+const PORT = process.env.PORT || 6969; 
+const HOST = process.env.host || '0.0.0.0';
+
 var path = require('path');
+
 app.use(bodyParser.urlencoded ({extended : true}));
 app.use(bodyParser.json());
 app.use(express.static('./public'));
@@ -21,5 +26,6 @@ app.post("/sendData", (req, res) => {
 
 })
 
-app.listen(8080);
-console.log("server running on 8080");
+app.listen(PORT, function () {
+	console.log("server running on https://"+HOST+":"+PORT+"/");
+});
